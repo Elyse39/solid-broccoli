@@ -95,4 +95,20 @@ void free_leave_list(LeaveNode *head);
 int fuzzy_search_employee(EmpNode *head, const char *keyword);
 void predict_monthly_salary(Employee *emp, RecordNode *rec_head, const char *month_prefix);
 void sort_and_stat_attendance(EmpNode *emp_head, RecordNode *rec_head, const char *dept_id, const char *month_prefix, int sort_type);
+// 弱智ai之他忘了自己写的函数1————business_admin.c
+EmpNode *find_emp_prev(EmpNode *head, const char *id);
+Employee *find_employee(EmpNode *head, const char *id);
+void admin_add_user(Employee *admin, EmpNode **head);
+void admin_delete_user(Employee *admin, EmpNode **head);
+void admin_reset_password(Employee *admin, EmpNode *head);
+void admin_menu(Employee *current_user, EmpNode **emp_list, RecordNode **rec_list, LeaveNode **leave_list);
+// 弱智ai之他忘了自己写的函数2————business_user
+void clock_in_with_greeting(Employee *emp, RecordNode **rec_list);
+void apply_for_leave(Employee *emp, LeaveNode **leave_list);
+Employee *get_emp_by_id_local(EmpNode *head, const char *id);
+void process_leave_approvals(Employee *manager, EmpNode *emp_list, LeaveNode *leave_list);
+void manager_drill_down_query(Employee *manager, EmpNode *emp_list, RecordNode *rec_list);
+void employee_menu(Employee *current_user, EmpNode **emp_list, RecordNode **rec_list, LeaveNode **leave_list);
+void manager_menu(Employee *current_user, EmpNode **emp_list, RecordNode **rec_list, LeaveNode **leave_list);
+
 #endif
